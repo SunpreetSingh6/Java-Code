@@ -1,0 +1,15 @@
+
+
+		
+		In hibernate we can use hibernate query language(HQL) or NativeQuery or hibernate criteria query language
+
+		HCQL :- Hibernate Criteria Query Language		
+		HCQL :- The Hibernate Criteria Query Language (HCQL) is used to fetch the records based on the specific criteria. 
+				The Criteria interface provides methods to apply criteria such as retreiving all the records of table 
+				whose salary is greater than 50000 etc.
+				
+		Advantage :- The HCQL provides methods to add criteria, so it is easy for the java programmer to add criteria. 
+					 The java programmer is able to add many criteria on a query.
+					 
+					 
+		

@@ -1,0 +1,31 @@
+
+
+	The core module contains 4 parts
+		core,bean,context,spExpression
+		
+		Core and bean provides the fundamental concepts like of spring framework like dependency injection and 
+		IOC i.e inversion of control. 
+		
+		Context module inherits the properties from bean module that means it has all the properties of bean module and it's 
+		own features like Internationalization,Event propagation,Resource allocation,Transparent creation of object. 
+		context also provides the J2EE features like EJB,JMS,Basic Remoting.
+		
+		
+		
+		IOC Container :- IOC container is responsible for creating the object of the bean,hold the object into the memory and
+						 inject the object into required bean. It also manages the lifecycle of the object.
+						 			 
+						 It takes 2 things :- bean(class) name which it needs to manage , and configuration file.
+						 
+		There are two types of IOC container :-
+			1) BeanFactory(interface)
+			2) ApplicationContext(interface)
+			
+			Since ApplicationContext is built on top of BeanFactory that means it has some more features.
+			So we will be using ApplicationContext as our IOC container.
+			
+			Since ApplicationContext is an interface so we cannot create object of it.
+			hence we use its implementation
+				1) ClassPathXmlApplicationContext :- when we have xml config file in our classpath
+				2) AnnotaionConfigApplicationContext :- when we are doing configuration using annotation
+				3) FileSystemXmlApplicationContext :- when we have config file in our file system.

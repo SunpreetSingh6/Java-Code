@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+		xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:p="http://www.springframework.org/schema/p"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans       
+		http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean class="com.spring.Collection.Employee" name="employee">
+	<property name="ename"  value="Sunpreet" />
+	<property name="ephoneno">
+		<list>
+			<value>127890</value>
+			<value>127890</value>
+			<value>456465</value>
+			<value>975432</value>
+		</list>
+	</property>
+	
+	<property name="eaddress">
+		<set>
+			<value>Delhi</value>
+			<value>Delhi</value>
+			<value>Canada</value>
+		</set>
+	</property>
+	
+	<property name="eprojects">
+		<map>
+			<entry key="Java" value="Java Spring Project" />
+			<entry key="Python" value="Django Project" />
+		</map>
+	</property>
+</bean>
+		
+		
+	
+</beans>

@@ -1,0 +1,17 @@
+
+
+		What is ExpressionLanguage  :-  1) We use spEl when we want to manipulate object graph at runtime.
+										2) Supports parsing and executing expression with the help of 
+										   @Value Annotation.
+								
+							Example:-	@Value("#{expression}")
+							 
+			expression can be :-    Classes,Variable,Methods,Constructors,Objects
+									and symbols(char,numeric,operators,keywords and special symbols 
+												which return's a value.)
+												
+							Example:-	@Value("#{11+22}")  -> automatically parse it and store it.
+										@Value("#{ a>b?a:b }")	-> Ternary operator.
+										
+										
+							

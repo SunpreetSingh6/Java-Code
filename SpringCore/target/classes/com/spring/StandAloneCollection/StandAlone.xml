@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:p="http://www.springframework.org/schema/p"
+xmlns:c="http://www.springframework.org/schema/c"
+xmlns:util="http://www.springframework.org/schema/util"
+xmlns:context="http://www.springframework.org/schema/context"
+xsi:schemaLocation="http://www.springframework.org/schema/beans  
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/util
+http://www.springframework.org/schema/util/spring-util.xsd">
+	
+	<!-- If we want to use the same list again and again or multiple times then we have to 
+		 create the list inside bean everytime , but in case of standalone list we will declare 
+		 a list outside a bean and provide a id to that list so that we can use that list 
+		 multiple times just by using id.
+		 
+		 To use standalone collection we have to use 'util' schema. 
+	-->
+	
+	<!-- StandAlone List(ArrayList,LinkedList,Vector).-->
+	
+	<util:list list-class="java.util.ArrayList" id="myfriends">
+		<value>Sunpreet</value>
+		<value>Singh</value>
+		<value>Sunny</value>
+	</util:list>
+	
+	<!-- StandAlone Map(HashMap,TreeMap,SortedMap). -->
+	
+	<util:map map-class="java.util.HashMap" id="feestruct">
+		<entry key="Spring(Java) Framwork" value="5000"/>
+		<entry key="Django(Python) Framwork" value="3000"/>
+		<entry key="Hibernate(Java) Framwork" value="1500"/>
+	</util:map>
+	
+	<!-- Here we have created only 1 StandAlone List but we have used it twice -->
+	
+	<bean class="com.spring.StandAloneCollection.Person" name="p1">
+		<property name="friends" ref="myfriends" />
+		<property name="feestructure" ref="feestruct" />
+	</bean>
+	
+	<bean class="com.spring.StandAloneCollection.Person" name="p2">
+		<property name="friends">
+			<ref bean="myfriends"/>
+		</property>
+		<property name="feestructure">
+			<ref bean="feestruct"/>
+		</property>
+	</bean>
+	
+</beans>

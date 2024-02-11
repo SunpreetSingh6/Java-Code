@@ -1,0 +1,9 @@
+
+Mapping can be OneToOne , ManyToOne , OneToMany , ManyToMany
+Example using Laptop and Student.
+
+	1) OneToOne Mapping :- 1 student can have 1 laptop and that 1 laptop belongs to 1 student. 
+	2) OneToMany/ManyToOne Mapping :- 1 student can have many(2/3) laptops (i.e OneToMany) 
+									  and that laptops belongs to 1 student(i.e ManyToOne).
+	3) ManyToMany Mapping :- In a lab there are 5 laptops and 5 students now any student can use 
+							 any laptop .  

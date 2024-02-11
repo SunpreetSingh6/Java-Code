@@ -1,0 +1,11 @@
+Sequence by package
+
+1) Core
+2) Setter Injection
+3) Constructor Injection
+4) Collection(Not mandatory)
+5) StandAloneApplication
+6) AutoWiring
+7) StereoAnnotation
+8) ExpressionLanguage
+9) AnnotationBasedConfig

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:p="http://www.springframework.org/schema/p"
+xsi:schemaLocation="http://www.springframework.org/schema/beans       
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!--  P schema is used for property injection. -->
+	
+	<bean class="com.spring.SetterInjection.EmpDetails" name="ed">
+		<property name="id" value="201" />
+		<property name="branch" value="Delhi" />
+		<property name="salary" value="2500000"/>
+	</bean>
+	
+	<bean class="com.spring.SetterInjection.Employee" name="e1" >
+		<property name="name" value="Sunpreet Singh" />
+		<property name="phone">
+			<list>
+				<value>8375939357</value>
+				<value>1111111111</value>
+				<value>2222222222</value>
+				<value>1111111111</value>
+			</list>
+		</property>
+		
+		<property name="address">
+			<set>
+				<value>New Delhi</value>
+				<value>Panjab</value>
+				<value>Canada</value>
+				<value>Uttarakhand</value>
+				<value>New Delhi</value>
+			</set>
+		</property>
+		
+		<property name="projects">
+			<map>
+				<entry key="1" value="Java Application using Hibernate and Spring Framework."/>
+				<entry key="2" value="Java Application using JavaSwings and JDBC."/>
+			</map>
+		</property>
+		
+		<property name="LoginDetails">
+			<props>
+				<prop key="Username">Sunpreet9357</prop>
+				<prop key="Passsword">Sun9357</prop>
+			</props>
+		</property>
+		
+		<!-- For reference we can use any of these.  -->
+		
+		<!-- Using reference as tag
+			<property name="empdet" ><ref bean="ed"/></property>
+		 -->
+		<!-- Using reference as attribute -->
+			<property name="empdet" ref="ed" />
+		 <!-- Using p schema in bean tag
+		 	<bean class="com.spring.Collections.Employee" name="e1" p:empdet-ref="ed">
+		  -->
+	</bean>	
+</beans>

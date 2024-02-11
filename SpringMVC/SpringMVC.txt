@@ -1,0 +1,46 @@
+	
+	->To create Spring MVC Web Application
+
+	1) Configure DispatcherServlet in web.xml
+	2) Create Spring Configuration file. (Have to create this file along with web.xml)
+	3) Configure Resolver.	(Have to create a bean in spring config file with name InternalResourceViewResolver)
+	4) Create Controller.	(Have to create a java file which will behave like controller)
+	5) Create a view page to show.	(Creating view files in views folder in WEB-INF)
+	
+	
+	-> To send data from controller to view(There are 2 ways to send data)
+	
+	1) Model :- using method    addAttribute(String key , Object value); 
+			* This data send by Model will be stored in HttpServletRequest and we can get that data
+			  using request.getAttribute(key) now this method will return object of object and we have to
+			  typecast it to our desired type . We can write this method in scriplet tag<% %>
+		**	Checkout about function in HomeController	**
+	
+	2) ModelAndView :- using method    addObject(String key , Object value);
+			* We can set the view using setViewName("")  
+		**	Checkout help function in HomeController	**
+		
+		*** We can also get data from JSP ExpressionLanguage ***
+			We can get it using ${key}
+			Since ExpressionLanguage is disabled in JSP we have enable it using
+			<%@page isELIgnored= "false" %> 
+			If we want to get Collection then we have to use JSTL.
+		**Checkout help.jsp**
+		
+		
+	-> To send data from view to controller(There are 2 ways to send data)
+	
+	1) Using @RequestParam annotation :- using this annotation we have to fetch and store the each field.
+		** We have to use @RequestParam annotation in the handler method's parameter**
+		*** @RequestParam("name of the form field" , String variable) ***
+		* Checkout ContactUs java file *
+		
+		
+	2) Using @ModelAttribute annotation :- using this annotation we can fetch entire form
+		This annotation can be used on 2 places:-
+		(i)In Handler method's parameter:- public String MethodName(@ModelAttribute ClassName class reference)
+		(ii)On method :- It will be used on the method when there is common data to show in all handler's method 
+							and this method will be executed before handler method.
+		** Checkout ContactUs java file **
+		
+		 

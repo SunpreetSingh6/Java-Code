@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+    	<property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property> 
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3308/Hibernate</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hbm2ddl.auto">create</property>
+   <!-- <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>	-->
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+        
+        <!-- For Second Level Cache -->
+        <property name="hibernate.cache.use_second_level_cache">true</property>
+        <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.internal.EhcacheRegionFactory
+        </property>
+        
+        <mapping class="com.sunpreet.FirstHibApp.Alien_Home"/>
+        <mapping class="com.sunpreet.FirstHibApp.Alien_Address"/>
+  	    <mapping class="com.sunpreet.Mapping.Question"/>
+        <mapping class="com.sunpreet.Mapping.Answer"/>
+        <mapping class="com.sunpreet.Mapping.Student"/>
+        <mapping class="com.sunpreet.Mapping.Laptop"/>
+        <mapping class="com.sunpreet.Mapping.Project"/>
+        <mapping class="com.sunpreet.Mapping.Employee"/>
+        <mapping class="com.sunpreet.HQL.Teacher"/>
+        <mapping class="com.sunpreet.Pagination.Pagination"/>      
+    </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,14 @@
+			
+			
+			
+			Autowiring:- Feature of spring framework in which spring container inject the 
+		 				 dependencies automatically.
+		 				 Autowiring can't be used to inject primitive and String values. It works
+		 				 with reference only.
+		 				 
+		 		Can be done in 2 ways:- 
+		 		1) XML using bean tag( Autowiring Modes -> no{by default},byname,bytype,constructor)
+		 		2) Annotation (@Autowired)
+		 		
+		 		Advantages:-	Automatically , Less code 
+		 		Disadvantages:-	No control of programmer , Can't be used with primitive and String. 
